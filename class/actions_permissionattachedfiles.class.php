@@ -35,7 +35,7 @@ class Actionspermissionattachedfiles
 
 		$usercanview = $user->rights->permissionattachedfiles->view;
 		
-		if(!$usercanview) {
+		if(!$usercanview && !isset($_GET["hashp"])) {
 			$langs->loadLangs(array('errors', 'permissionattachedfiles@permissionattachedfiles'));
 
 			$msgtoshow .= '<b>';
